@@ -8,6 +8,7 @@ public class Professor extends Usuario {
     }
 
     public void lancarNotas(double nota1, double nota2){
-
     }
+
+
 }
