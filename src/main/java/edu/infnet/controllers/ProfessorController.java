@@ -14,6 +14,7 @@ public class ProfessorController implements Controller {
     @Override
     public void registerRoutes(){
 
+
         path("/api", () -> {
             post("/professores", (request, response) -> {
                 Professor novoProfessor = gson.fromJson(request.body(), Professor.class);

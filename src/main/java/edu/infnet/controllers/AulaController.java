@@ -6,7 +6,6 @@ import edu.infnet.model.domain.Aluno;
 import edu.infnet.model.domain.Aula;
 import edu.infnet.model.domain.Professor;
 import edu.infnet.model.service.AulaService;
-import edu.infnet.model.service.ProfessorService;
 
 import static spark.Spark.*;
 

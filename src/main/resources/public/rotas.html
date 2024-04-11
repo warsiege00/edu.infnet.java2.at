@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto - Rotas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="/rotas">Rotas do serviço</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="main-section">
+    <h1>Endpoints Disponíveis</h1>
+    <section class="routes-section">
+        <h2>Rotas do Aluno</h2>
+        <ul>
+            <li>
+                <strong>POST /api/alunos</strong>: Adiciona um novo aluno.
+                <p>Para adicionar um novo aluno, envie uma requisição POST para a rota <code>/api/alunos</code> com os dados do aluno no corpo da requisição em formato JSON.</p>
+            </li>
+            <li>
+                <strong>GET /api/alunos</strong>: Retorna todos os alunos cadastrados.
+                <p>Para obter todos os alunos cadastrados, envie uma requisição GET para a rota <code>/api/alunos</code>. A resposta será uma lista de objetos JSON representando os alunos.</p>
+            </li>
+            <li>
+                <strong>GET /api/alunos/:id</strong>: Retorna um aluno específico pelo ID.
+                <p>Para obter um aluno específico pelo seu ID, envie uma requisição GET para a rota <code>/api/alunos/:id</code>, substituindo <code>:id</code> pelo ID do aluno desejado. A resposta será um objeto JSON representando o aluno encontrado.</p>
+            </li>
+            <li>
+                <strong>DELETE /api/professores/:id</strong>: Remove um aluno pelo ID.
+                <p>Para remover um aluno pelo seu ID, envie uma requisição DELETE para a rota <code>/api/professores/:id</code>, substituindo <code>:id</code> pelo ID do aluno a ser removido. Se o aluno for encontrado e removido com sucesso, a resposta será um status 204 No Content. Caso contrário, será retornado um status 404 Not Found.</p>
+            </li>
+        </ul>
+    </section>
+
+</section>
+
+<footer>
+    <p>&copy; 2024 Projeto XYZ</p>
+</footer>
+</body>
+</html>

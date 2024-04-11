@@ -1,9 +1,8 @@
 package edu.infnet;
 import edu.infnet.clients.LocalidadesClient;
-import edu.infnet.controllers.AlunoController;
-import edu.infnet.controllers.AulaController;
-import edu.infnet.controllers.LocalidadeController;
-import edu.infnet.controllers.ProfessorController;
+import edu.infnet.controllers.*;
+import spark.ModelAndView;
+import spark.template.mustache.MustacheTemplateEngine;
 
 import static spark.Spark.*;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -13,6 +12,9 @@ public class Main {
         port(8080);
 
 
+
+        LandingPageController landingPageController = new LandingPageController();
+        landingPageController.registerRoutes();
         ProfessorController professorController = new ProfessorController();
         professorController.registerRoutes();
         AulaController aulaController = new AulaController();
@@ -21,5 +23,7 @@ public class Main {
         localidadeController.registerRoutes();
         AlunoController alunoController = new AlunoController();
         alunoController.registerRoutes();
+
+
     }
 }
