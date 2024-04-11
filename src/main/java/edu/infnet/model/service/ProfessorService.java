@@ -1,36 +1,34 @@
 package edu.infnet.model.service;
 
 import edu.infnet.model.domain.Professor;
+import edu.infnet.model.repository.AulaRepository;
+import edu.infnet.model.repository.ProfessorRepository;
 
 import java.util.*;
 
 public class ProfessorService {
-    private static Map<Integer, Professor> database = new HashMap<>();
-
+    private final ProfessorRepository professorRepository;
     public ProfessorService(){
-        Professor p = new Professor(1, "Elberth");
-        Professor p2 = new Professor(2, "Matheus");
-        database.put(1, p);
-        database.put(2, p2);
+        this.professorRepository = new ProfessorRepository();
     }
 
     public void adicionar(Professor professor){
-        database.put(professor.getId(), professor);
+        professorRepository.create(professor);
     }
     public List<Professor> obterTodos(){
-        return new ArrayList<>(database.values());
+        return professorRepository.findAll();
     }
 
     public Professor obterPorId(int id){
-        return database.get(id);
+        return professorRepository.findBy(id);
     }
 
     public void atualizar(int id, Professor professor){
-        database.put(professor.getId(), professor);
+        professorRepository.update(professor);
     }
 
     public Professor excluir(int id){
-        return database.remove(id);
+        return professorRepository.delete(id);
     }
 
 }

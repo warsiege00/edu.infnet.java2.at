@@ -1,16 +1,18 @@
 package edu.infnet.model.domain;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Aula {
     private int id;
-    private Aluno aluno;
-    private Professor professor;
     private String disciplina;
+    private List<Aluno> alunos;
+    private Professor professor;
 
-    public Aula(int id, Aluno aluno, Professor professor, String disciplina) {
+    public Aula(int id, String disciplina, List<Aluno> alunos) {
         this.id = id;
-        this.aluno = aluno;
-        this.professor = professor;
         this.disciplina = disciplina;
+        this.alunos = alunos;
     }
 
     public int getId() {
@@ -21,12 +23,12 @@ public class Aula {
         this.id = id;
     }
 
-    public Aluno getAluno() {
-        return aluno;
+    public List<Aluno> getAluno() {
+        return alunos;
     }
 
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
+    public void setAluno(List<Aluno> alunos) {
+        this.alunos = alunos;
     }
 
     public Professor getProfessor() {
@@ -43,5 +45,12 @@ public class Aula {
 
     public void setDisciplina(String disciplina) {
         this.disciplina = disciplina;
+    }
+
+    public void adicionarAluno(Aluno aluno) {
+        this.alunos.add(aluno);
+    }
+    public void definirProfessor(Professor professor) {
+        this.professor = professor;
     }
 }

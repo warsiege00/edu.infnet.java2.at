@@ -1,5 +1,6 @@
 package edu.infnet;
 import edu.infnet.clients.LocalidadesClient;
+import edu.infnet.controllers.AlunoController;
 import edu.infnet.controllers.AulaController;
 import edu.infnet.controllers.LocalidadeController;
 import edu.infnet.controllers.ProfessorController;
@@ -18,5 +19,7 @@ public class Main {
         aulaController.registerRoutes();
         LocalidadeController localidadeController = new LocalidadeController();
         localidadeController.registerRoutes();
+        AlunoController alunoController = new AlunoController();
+        alunoController.registerRoutes();
     }
 }

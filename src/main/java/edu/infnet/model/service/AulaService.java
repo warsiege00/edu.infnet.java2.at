@@ -3,6 +3,7 @@ package edu.infnet.model.service;
 import edu.infnet.model.domain.Aluno;
 import edu.infnet.model.domain.Aula;
 import edu.infnet.model.domain.Professor;
+import edu.infnet.model.repository.AulaRepository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,33 +11,64 @@ import java.util.List;
 import java.util.Map;
 
 public class AulaService {
-    private static Map<Integer, Aula> database = new HashMap<>();
+
+    private final AulaRepository aulaRepository;
+
+    private final ProfessorService professorService;
+    private final AlunoService alunoService;
 
     public AulaService(){
-        Professor p2 = new Professor(2, "Elberth");
-        Aluno a2 = new Aluno(1, "Matheus");
-        Aula a = new Aula(1, a2,p2, "Matematica" );
-
-        database.put(1, a);
+        this.aulaRepository = new AulaRepository();
+        this.professorService = new ProfessorService();
+        this.alunoService = new AlunoService();
     }
-
-    public void adicionar(Aula aula){
-        database.put(aula.getId(), aula);
+    public void criar(Aula aula){
+        aulaRepository.create(aula);
     }
     public List<Aula> obterTodos(){
-        return new ArrayList<>(database.values());
+        return aulaRepository.findAll();
     }
 
     public Aula obterPorId(int id){
-        return database.get(id);
+        return aulaRepository.findBy(id);
     }
 
     public void atualizar(int id, Aula aula){
-        database.put(aula.getId(), aula);
+        aulaRepository.update(aula);
     }
 
     public Aula excluir(int id){
-        return database.remove(id);
+        return aulaRepository.delete(id);
+    }
+
+    public boolean adicionarAluno(int alunoId, int aulaId){
+        Aluno aluno = alunoService.obterPorId(alunoId);
+        Aula aula = obterPorId(aulaId);
+        if (aluno == null) {
+            return false; // Professor não encontrado
+        }
+
+        if (aula == null) {
+            return false; // Aula não encontrada
+        }
+        aula.adicionarAluno(aluno);
+        aulaRepository.update(aula);
+        return true;
+    }
+
+    public boolean definirProfessor(int professorId, int aulaId){
+        Professor professor = professorService.obterPorId(professorId);
+        Aula aula = obterPorId(aulaId);
+        if (professor == null) {
+            return false; // Professor não encontrado
+        }
+
+        if (aula == null) {
+            return false; // Aula não encontrada
+        }
+        aula.definirProfessor(professor);
+        aulaRepository.update(aula);
+        return true;
     }
 
 }
