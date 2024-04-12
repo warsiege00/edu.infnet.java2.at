@@ -31,6 +31,10 @@ Este projeto foi desenvolvido como parte do curso de Engenharia de Software na I
 8. java -jar target/projeto-xyz.jar
 9. Abra um navegador da web e acesse `http://localhost:8080` para interagir com o aplicativo.
 
+## Arquivo para testar rotas
+Importar o arquivo json abaixo no Insomina ou Postman
+https://github.com/warsiege00/edu.infnet.java2.at/blob/main/src/main/resources/assets/java2_at_postman_insonmnia.json
+
 ## Contribuição
 
 Contribuições são bem-vindas! Se você encontrar algum problema ou tiver uma sugestão de melhoria, por favor abra uma issue neste repositório ou envie um pull request.
