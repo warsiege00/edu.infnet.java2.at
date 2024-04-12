@@ -1,8 +1,5 @@
 package edu.infnet;
-import edu.infnet.clients.LocalidadesClient;
 import edu.infnet.controllers.*;
-import spark.ModelAndView;
-import spark.template.mustache.MustacheTemplateEngine;
 
 import static spark.Spark.*;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -13,8 +10,8 @@ public class Main {
 
 
 
-        LandingPageController landingPageController = new LandingPageController();
-        landingPageController.registerRoutes();
+        PageController pageController = new PageController();
+        pageController.registerRoutes();
         ProfessorController professorController = new ProfessorController();
         professorController.registerRoutes();
         AulaController aulaController = new AulaController();

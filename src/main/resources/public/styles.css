@@ -56,3 +56,115 @@ header {
 ul {
     list-style: none;
 }
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .navbar li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .main-section {
+            background-color: #f2f2f2;
+            padding: 20px;
+            color: #333;
+        }
+
+        .routes-section {
+            background-color: #ddd;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .routes-section h2 {
+            color: #333;
+        }
+
+        .routes-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .routes-section ul li {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.main-section {
+    padding: 20px;
+}
+
+.github-link {
+    margin-bottom: 20px;
+}
+
+.student-info {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

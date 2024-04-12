@@ -3,11 +3,9 @@ package edu.infnet.controllers;
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
-import java.io.File;
-
 import static spark.Spark.*;
 
-public class LandingPageController implements Controller {
+public class PageController implements Controller {
 
     @Override
     public void registerRoutes() {
@@ -18,9 +16,9 @@ public class LandingPageController implements Controller {
             return new ModelAndView(null, "index.html");
         }, new MustacheTemplateEngine());
 
-        get("/rotas", (req, res) -> {
+        get("/api-info", (req, res) -> {
             return new ModelAndView(null, "rotas.html");
-        }, new MustacheTemplateEngine());
+        }, new MustacheTemplateEngine("public"));
 
     }
 }

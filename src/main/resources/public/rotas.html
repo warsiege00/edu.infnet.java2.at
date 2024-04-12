@@ -10,7 +10,7 @@
 <header>
     <nav>
         <ul class="navbar">
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/rotas">Rotas do serviço</a></li>
         </ul>
     </nav>
@@ -19,7 +19,7 @@
 <section class="main-section">
     <h1>Endpoints Disponíveis</h1>
     <section class="routes-section">
-        <h2>Rotas do Aluno</h2>
+        <h2>Aluno</h2>
         <ul>
             <li>
                 <strong>POST /api/alunos</strong>: Adiciona um novo aluno.
@@ -39,9 +39,58 @@
             </li>
         </ul>
     </section>
+    <section class="routes-section">
+        <h2>Aula</h2>
+        <ul>
+            <li>
+                <strong>POST /api/aulas</strong>: Adiciona uma nova aula.
+                <p>Para adicionar uma nova aula, envie uma requisição POST para a rota <code>/api/aulas</code> com os dados da aula no corpo da requisição em formato JSON.</p>
+            </li>
+            <li>
+                <strong>GET /api/aulas</strong>: Retorna todas as aulas cadastradas.
+                <p>Para obter todas as aulas cadastradas, envie uma requisição GET para a rota <code>/api/aulas</code>. A resposta será uma lista de objetos JSON representando as aulas.</p>
+            </li>
+            <li>
+                <strong>GET /api/aulas/:id</strong>: Retorna uma aula específica pelo ID.
+                <p>Para obter uma aula específica pelo seu ID, envie uma requisição GET para a rota <code>/api/aulas/:id</code>, substituindo <code>:id</code> pelo ID da aula desejada. A resposta será um objeto JSON representando a aula encontrada.</p>
+            </li>
+            <li>
+                <strong>DELETE /api/aulas/:id</strong>: Remove uma aula pelo ID.
+                <p>Para remover uma aula pelo seu ID, envie uma requisição DELETE para a rota <code>/api/aulas/:id</code>, substituindo <code>:id</code> pelo ID da aula a ser removida. Se a aula for encontrada e removida com sucesso, a resposta será um status 204 No Content. Caso contrário, será retornado um status 404 Not Found.</p>
+            </li>
+            <li>
+                <strong>POST /api/aulas/:id/matricularAluno/:alunoId</strong>: Matricula um aluno em uma aula específica.
+                <p>Para matricular um aluno em uma aula específica, envie uma requisição POST para a rota <code>/api/aulas/:id/matricularAluno/:alunoId</code>, substituindo <code>:id</code> pelo ID da aula e <code>:alunoId</code> pelo ID do aluno. Envie os dados do aluno no corpo da requisição em formato JSON. A resposta será um status 201 Created se o aluno for matriculado com sucesso, ou um status 404 Not Found se o aluno não for encontrado.</p>
+            </li>
+            <li>
+                <strong>POST /api/aulas/:id/definirProfessor/:professorId</strong>: Define um professor para uma aula específica.
+                <p>Para definir um professor para uma aula específica, envie uma requisição POST para a rota <code>/api/aulas/:id/definirProfessor/:professorId</code>, substituindo <code>:id</code> pelo ID da aula e <code>:professorId</code> pelo ID do professor. Envie os dados do professor no corpo da requisição em formato JSON. A resposta será um status 201 Created se o professor for definido com sucesso, ou um status 404 Not Found se o professor não for encontrado.</p>
+            </li>
+        </ul>
+    </section>
+    <section class="routes-section">
+        <h2>Professor</h2>
+        <ul>
+            <li>
+                <strong>POST /api/professores</strong>: Adiciona um novo professor.
+                <p>Para adicionar um novo professor, envie uma requisição POST para a rota <code>/api/professores</code> com os dados do professor no corpo da requisição em formato JSON.</p>
+            </li>
+            <li>
+                <strong>GET /api/professores</strong>: Retorna todos os professores cadastrados.
+                <p>Para obter todos os professores cadastrados, envie uma requisição GET para a rota <code>/api/professores</code>. A resposta será uma lista de objetos JSON representando os professores.</p>
+            </li>
+            <li>
+                <strong>GET /api/professores/:id</strong>: Retorna um professor específico pelo ID.
+                <p>Para obter um professor específico pelo seu ID, envie uma requisição GET para a rota <code>/api/professores/:id</code>, substituindo <code>:id</code> pelo ID do professor desejado. A resposta será um objeto JSON representando o professor encontrado.</p>
+            </li>
+            <li>
+                <strong>DELETE /api/professores/:id</strong>: Remove um professor pelo ID.
+                <p>Para remover um professor pelo seu ID, envie uma requisição DELETE para a rota <code>/api/professores/:id</code>, substituindo <code>:id</code> pelo ID do professor a ser removido. Se o professor for encontrado e removido com sucesso, a resposta será um status 204 No Content. Caso contrário, será retornado um status 404 Not Found.</p>
+            </li>
+        </ul>
+    </section>
 
 </section>
-
 <footer>
     <p>&copy; 2024 Projeto XYZ</p>
 </footer>
